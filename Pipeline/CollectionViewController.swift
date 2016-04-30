@@ -12,11 +12,17 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
 
     @IBOutlet weak var collection: UICollectionView!
 
+    var object = Object()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collection.delegate = self
         collection.dataSource = self
+
+        object.downloadPipelineDetails { () -> () in
+            
+        }
 
     }
 
@@ -32,6 +38,8 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+
+        performSegueWithIdentifier("DetailSegue", sender: object)
         
     }
 

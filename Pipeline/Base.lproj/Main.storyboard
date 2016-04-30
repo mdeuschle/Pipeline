@@ -25,7 +25,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OwJ-Bt-NLS">
-                                <rect key="frame" x="20" y="108" width="335" height="539"/>
+                                <rect key="frame" x="20" y="108" width="335" height="559"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OvB-NN-5sM">
                                     <size key="itemSize" width="110" height="110"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -62,7 +63,7 @@
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0B8-Ih-uqm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Gk-4W-eTu"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OwJ-Bt-NLS" secondAttribute="bottom" constant="20" id="2h8-wO-mVI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OwJ-Bt-NLS" secondAttribute="bottom" id="2h8-wO-mVI"/>
                             <constraint firstAttribute="trailing" secondItem="0B8-Ih-uqm" secondAttribute="trailing" id="ZZ5-yM-lIy"/>
                             <constraint firstItem="OwJ-Bt-NLS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="eGu-Ok-jGo"/>
                             <constraint firstItem="0B8-Ih-uqm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="g6s-62-8yF"/>
@@ -74,11 +75,30 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="collection" destination="OwJ-Bt-NLS" id="IPU-oi-MQ2"/>
+                        <segue destination="E7w-SU-nvj" kind="show" identifier="DetailSegue" id="dtX-U7-xSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="693.5" y="413.5"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="nnD-DA-F5C">
+            <objects>
+                <viewController id="E7w-SU-nvj" customClass="DetailViewController" customModule="Pipeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EdF-Po-EF9"/>
+                        <viewControllerLayoutGuide type="bottom" id="b6x-IG-NA8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E5j-bt-c3b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kG5-8V-buQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124.5" y="413.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4DB-dl-R0C">
@@ -89,11 +109,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g4B-pm-hSX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
