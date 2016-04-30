@@ -11,11 +11,11 @@ import Alamofire
 
 class Object {
 
-    var id = 0
-    var imageURL = ""
-    var imageThumb = ""
-    var status = ""
-    var descrip = ""
+    var id: String!
+    var imageURL: String!
+    var imageThumb: String!
+    var status: String!
+    var descrip: String!
     var urlPipeline = "\(urlBase)"
 
     init() {
@@ -30,7 +30,39 @@ class Object {
 
             let result = response.result
 
-            print(result.debugDescription)
+            if let dic = result.value?.objectForKey("1") as? [String: AnyObject] {
+
+                if let id = dic["id"] as? String {
+
+                    self.id = id
+                }
+
+                if let imageURL = dic["image_url"] as? String {
+
+                    self.imageURL = imageURL
+                }
+
+                if let imageThumb = dic["image_thumb_url"] as? String {
+
+                    self.imageThumb = imageThumb
+                }
+
+                if let status = dic["status_cd"] as? String {
+
+                    self.status = status
+                }
+
+                if let descrip = dic["description"] as? String {
+
+                    self.descrip = descrip
+                }
+
+                print(self.id)
+                print(self.imageURL)
+                print(self.imageThumb)
+                print(self.status)
+                print(self.descrip)
+            }
         }
     }    
 }
