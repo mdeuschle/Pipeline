@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class Object {
 
@@ -28,44 +29,51 @@ class Object {
 
         Alamofire.request(.GET, url).responseJSON { response in
 
-            let result = response.result
+            if let result = response.result.value {
 
-            if let dic = result.value?.objectForKey("1") as? [String: AnyObject] {
+                let json = JSON(result)
 
-                if let id = dic["id"] as? String {
+                for i in 1...20 {
+
+                    let sourceId = json["\(i)"].dictionaryValue
+
+                if let id = sourceId["id"]?.stringValue {
 
                     self.id = id
                 }
 
-                if let imageURL = dic["image_url"] as? String {
+                if let imageURL = sourceId["image_url"]?.stringValue {
 
                     self.imageURL = imageURL
                 }
 
-                if let imageThumb = dic["image_thumb_url"] as? String {
+                if let imageThumb = sourceId["image_thumb_url"]?.stringValue {
 
                     self.imageThumb = imageThumb
                 }
 
-                if let status = dic["status_cd"] as? String {
+                if let status = sourceId["status_cd"]?.stringValue {
 
                     self.status = status
                 }
 
-                if let descrip = dic["description"] as? String {
+                if let descrip = sourceId["description"]?.stringValue {
 
                     self.descrip = descrip
                 }
 
-                print(self.id)
-                print(self.imageURL)
-                print(self.imageThumb)
-                print(self.status)
-                print(self.descrip)
+                print("ID \(self.id)")
+                print("Image \(self.imageURL)")
+                print("Thumb \(self.imageThumb)")
+                print("Status \(self.status)")
+                print("Descrip \(self.descrip)")
             }
+            
         }
-    }    
+    }
+}    
 }
+
 
 
 
